@@ -49,3 +49,23 @@ func open(dbms string, connect string, count int) (*gorm.DB, error) {
 	}
 	return db, nil
 }
+
+// Find は可変長引数whereの条件を元にデータを引っ張ってくるメソッド
+func (handler *SQLHandler) Find(user interface{}, where ...interface{}) *gorm.DB {
+	return handler.Conn.Find(user, where...)
+}
+
+// Create は新規ユーザー作成メソッド
+func (handler *SQLHandler) Create(user interface{}) *gorm.DB {
+	return handler.Conn.Create(user)
+}
+
+// Save は変更を保存するメソッド
+func (handler *SQLHandler) Save(user interface{}) *gorm.DB {
+	return handler.Conn.Save(user)
+}
+
+// Delete はuserを削除するメソッド
+func (handler *SQLHandler) Delete(user interface{}) *gorm.DB {
+	return handler.Conn.Delete(user)
+}
