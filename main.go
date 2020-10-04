@@ -1,14 +1,10 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
+	"github.com/haru0017/go-clean-architecture/infrastructure/api/router"
 )
 
 func main() {
-	r := gin.Default()
-	r.GET("/hello", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello Clean Architecture!")
-	})
-	r.Run(":8080")
+	router.Router.Run()
 }
+
