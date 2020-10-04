@@ -2,8 +2,8 @@ package model
 
 // User はidとnameを持つ型
 type User struct {
-	id int
-	name string
+	ID int
+	Name string
 }
 
 // Users はUserのスライス
