@@ -1,3 +1,5 @@
 FROM mysql:5.7
 
-RUN touch /var/log/mysql/mysqld.log
+COPY ./docker/db/mysql.cnf /etc/mysql/conf.d/mysql.cnf
+
+CMD ["mysqld"]
