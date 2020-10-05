@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 	"time"
-
+	"github.com/haru0017/go-clean-architecture/interface/db"
 	"github.com/jinzhu/gorm"
 	// mysql driver
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -17,7 +17,7 @@ type SQLHandler struct {
 }
 
 // NewSQLHandler は新しいSQLHandlerを生成する
-func NewSQLHandler() *SQLHandler {
+func NewSQLHandler() db.SQLHandler {
 	DBMS := "mysql"
 	USER := "root"
 	PASS := "password"
@@ -29,7 +29,12 @@ func NewSQLHandler() *SQLHandler {
 	conn, err := open(DBMS, CONNECT, WAIT)
 	if err != nil {
 		panic(err)
+	} else {
+		fmt.Println("Connected")
 	}
+	
+	conn.LogMode(true)
+
 	sqlHandler := new(SQLHandler)
 	sqlHandler.Conn = conn
 
