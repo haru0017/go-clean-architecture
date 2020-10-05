@@ -40,8 +40,6 @@ func (controller *UserController) CreateUser(c Context) (err error) {
 // GetUser はidによりuserを取得するcontrollerのmethod
 func (controller *UserController) GetUser(c Context) (err error) {
 	id, _ := strconv.Atoi(c.Param("id"))
-	u := model.User{ID: id}
-	c.Bind(&u)
 	user, err := controller.Interactor.UserByID(id)
 
 	if err != nil {
