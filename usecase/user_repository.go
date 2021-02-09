@@ -6,7 +6,7 @@ import (
 
 // UserRepository はinterfaceのメソッドをusecase層で使うためのinterface
 type UserRepository interface {
-	FindByID(id int) (model.User, error)
+	FindByID(int) (model.User, error)
 	Store(model.User) (model.User, error)
 	Update(model.User) (model.User, error)
 	DeleteByID(model.User) error

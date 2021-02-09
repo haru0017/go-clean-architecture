@@ -29,8 +29,11 @@ func NewSQLHandler() db.SQLHandler {
 	conn, err := open(DBMS, CONNECT, WAIT)
 	if err != nil {
 		panic(err)
-	} else {
-		fmt.Println("Connected")
+	}
+
+	err = conn.DB().Ping()
+	if err != nil {
+		panic(err)
 	}
 	
 	conn.LogMode(true)
