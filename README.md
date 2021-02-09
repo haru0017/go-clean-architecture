@@ -1,8 +1,15 @@
 # Go-Clean-Architecture  
 
-## Abstract  
+REST API Server
 
-- REST API Server
+## Setup
+
+```
+docker-compose up -d
+```
+
+## Used 
+
 - Architecture : Clean Architecture
 - Language : Golang
 - Web Framework : Gin
