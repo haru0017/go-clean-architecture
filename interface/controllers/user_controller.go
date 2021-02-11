@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"strconv"
 	"github.com/haru0017/go-clean-architecture/domain/model"
 	"github.com/haru0017/go-clean-architecture/interface/db"
 	"github.com/haru0017/go-clean-architecture/usecase"
+	"strconv"
 )
 
 // UserController はusecaseの構造体UserInteractorを持つ

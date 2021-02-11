@@ -2,13 +2,11 @@ package db
 
 import (
 	"fmt"
-	"time"
 	"github.com/haru0017/go-clean-architecture/interface/db"
 	"github.com/jinzhu/gorm"
+	"time"
 	// mysql driver
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-
-
 )
 
 // SQLHandler はgormを扱うための型
@@ -35,7 +33,7 @@ func NewSQLHandler() db.SQLHandler {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	conn.LogMode(true)
 
 	sqlHandler := new(SQLHandler)

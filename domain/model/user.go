@@ -2,7 +2,7 @@ package model
 
 // User はidとnameを持つ型
 type User struct {
-	ID int
+	ID   int
 	Name string
 }
 

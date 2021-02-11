@@ -7,7 +7,7 @@ type Error struct {
 
 // NewError はerrの中身を持つErrorのアドレスを返す関数
 func NewError(err error) *Error {
-	return &Error {
+	return &Error{
 		Message: err.Error(),
 	}
 }
